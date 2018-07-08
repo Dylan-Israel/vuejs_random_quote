@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+* {
+    font-family: Roboto;
+}
+
+i {
+    cursor: pointer;
+    color: maroon;
+}
+
+#quote-card {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-areas: '. quote quote quote .';
+    color: maroon;
+}
+
+#quote {
+    grid-area: quote;
+    background-color: white;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+blockquote {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: 5px;
+}
+
+cite {
+    justify-self: end;
+}
+
+blockquote i {
+    margin-right: 10px;
+}
+
+button {
+    border: none;
+    border-radius: 2px;
+    background-color: white;
+    background-color: maroon;
+    color: white;
+    padding: .25em .5em;
+    cursor: pointer;
+}
+
+#quote-actions {
+    display: grid;  
+    grid-template-columns: 1fr 1fr;
+}
+
+/* @media screen and (min-width: 750px) {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-areas: '. . quote quote quote . .';
+} */
