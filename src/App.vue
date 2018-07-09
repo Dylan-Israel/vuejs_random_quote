@@ -1,19 +1,12 @@
 <template>
   <div id="app">
-   <Quote-Card></Quote-Card>
+   <router-view></router-view>
   </div>
 </template>
 
 <script>
 // components
 import QuoteCard from './components/quote-card/quote-card.component.vue';
-
-// dependencies
-import Vue from 'vue';
-import vueResource from 'vue-resource';
-
-// instantiation of depedencies
-Vue.use(vueResource);
 
 export default {
   name: 'app',
