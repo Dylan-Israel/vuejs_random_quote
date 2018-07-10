@@ -50,10 +50,18 @@ button {
 #quote-actions {
     display: grid;  
     grid-template-columns: 1fr 1fr;
+    grid-template-areas: 'icons new-quote';
 }
 
-/* @media screen and (min-width: 750px) {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    grid-template-areas: '. . quote quote quote . .';
-} */
+#quote-icons {
+    grid-area: icons;
+}
+
+#quote-button {
+    grid-area: new-quote;
+}
+
+
+#last-author {
+    margin-left: 5px;
+}

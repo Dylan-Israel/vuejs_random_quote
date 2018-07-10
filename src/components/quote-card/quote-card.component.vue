@@ -13,7 +13,12 @@ export default {
       quote: {
         quote: '',
         author: ''
-      }
+      }, 
+      icons: [
+        {className: 'fab fa-twitter-square fa-2x'},
+        {className: 'fab fa-youtube-square fa-2x'}
+      ],
+      lastAuthor: ''
     };
   },
   components: {
@@ -27,6 +32,8 @@ export default {
   }, 
   methods: {
     getQuote: async function() {
+      this.lastAuthor = this.quote.author;
+
       const response = await this.$http.get('https://talaikis.com/api/quotes/random/');
       const json = await response.json();
       const quote = new Quote(json);
@@ -34,8 +41,8 @@ export default {
       this.quote = quote;
     }
   },
-     created: function() {
-       this.getQuote();
+    created: async function() {
+      this.getQuote();
     },
 };
 </script>

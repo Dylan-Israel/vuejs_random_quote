@@ -8,10 +8,15 @@
         </blockquote>
 
         <div id='quote-actions'>
-            <a :href="'https://twitter.com/intent/tweet?text=' + quote.quote" target='blank'>
-            <quote-icon className='fab fa-twitter-square fa-2x'></quote-icon></a>
-
-            <button v-on:click='getQuote'>{{newQuote}}</button>
+            <span id='quote-icons'>
+                <span v-for='icon in icons'>
+                    <a :href="'https://twitter.com/intent/tweet?text=' + quote.quote" target='blank'>
+                        <quote-icon :className='icon.className'></quote-icon>
+                    </a>
+                </span>
+                <span id='last-author' v-if="lastAuthor">Last Author: {{lastAuthor}}</span>
+            </span>
+            <button id='quote-button' v-on:click='getQuote'>{{newQuote}}</button>
         </div>
     </div>
 </div>
